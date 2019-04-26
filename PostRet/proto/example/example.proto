@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package go.micro.srv.PostRet;
+
+service Example {
+	rpc PostRet(Request) returns (Response) {}
+
+}
+
+message Request {
+
+	//手机号
+	string mobile =1 ;
+
+	//密码
+	string password =2;
+	//手机验证码
+	string sms_code=3;
+}
+
+message Response {
+
+	//状态码
+	string errno=1;
+
+	//状态信息
+	string errmsg=2;
+	//sessionid
+	string sessionid=3;
+}
+
